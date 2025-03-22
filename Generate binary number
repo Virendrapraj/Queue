@@ -1,0 +1,22 @@
+import java.util.LinkedList;
+import java.util.*;
+public class numToBinary {
+
+     static void PrintBinary(int n){
+         Queue <String> s = new LinkedList<>();
+         s.add("1");
+         while(n-->0){
+             String s1 =  s.peek();
+             s.remove();
+             System.out.print(s1 + " ");
+             String s2 = s1;
+             s.add(s1+"0");
+             s.add(s2+ "1");
+
+         }
+     }
+    public static void main(String[] args) {
+         int n =10;
+         PrintBinary(n);
+    }
+}
