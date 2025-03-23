@@ -1,0 +1,24 @@
+import java.util.PriorityQueue;
+
+public class AddRopes {
+     static  int Addropes(int arr[],int n){
+        PriorityQueue<Integer> q = new PriorityQueue<>();
+        for (int i = 0; i < n; i++) {
+            q.add(arr[i]);
+        }
+        int result =0;
+        while(q.size()>1){
+            int f1 = q.poll();
+            int f2 = q.poll();
+            result += f1+f2;
+            q.add(f1+f2);
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+
+     int arr[] = {4,3,2,6};
+     int n =arr.length;
+        System.out.println(Addropes(arr,n));
+    }
+}
